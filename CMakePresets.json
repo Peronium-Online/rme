@@ -9,8 +9,7 @@
     {
       "name": "windows-release",
       "displayName": "Windows - Release",
-      "description": "Sets Ninja generator, compilers, build and install directory and set build type as release",
-      "generator": "Ninja",
+      "description": "Sets compilers, build and install directory and set build type as release",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
         "CMAKE_TOOLCHAIN_FILE": {

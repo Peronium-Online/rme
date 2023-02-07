@@ -44,7 +44,7 @@ jobs:
         with:
           vcpkgGitCommitId: f14984af3738e69f197bf0e647a8dca12de92996
 
-      - name: Get latest CMake and ninja
+      - name: Get latest CMake
         uses: lukka/get-cmake@main
 
       - name: Run CMake
