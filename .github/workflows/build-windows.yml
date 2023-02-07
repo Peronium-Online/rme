@@ -41,9 +41,6 @@ jobs:
 
       - name: Restore artifacts and install vcpkg
         uses: lukka/run-vcpkg@main
-        with:
-          vcpkgGitURL: "https://github.com/opentibiabr/vcpkg.git"
-          vcpkgGitCommitId: 8974d642d47efd578e0da3223b4101c5d59aebcf
 
       - name: Get latest CMake and ninja
         uses: lukka/get-cmake@main
