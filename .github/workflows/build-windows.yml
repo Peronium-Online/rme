@@ -42,7 +42,7 @@ jobs:
       - name: Restore artifacts and install vcpkg
         uses: lukka/run-vcpkg@main
         with:
-          vcpkgGitCommitId: f14984af3738e69f197bf0e647a8dca12de92996
+          vcpkgGitCommitId: 1c48ec7f49d69bb753e6afefba51368e18263255
 
       - name: Get latest CMake
         uses: lukka/get-cmake@main
@@ -63,7 +63,7 @@ jobs:
       - name: Create and Upload Artifact (dlls)
         uses: actions/upload-artifact@main
         with:
-          name: otclient-${{ matrix.buildtype }}-${{ github.sha }}
+          name: rme-${{ matrix.buildtype }}-${{ github.sha }}
           path: |
             ${{ github.workspace }}/*.dll
 
