@@ -22,6 +22,11 @@
         "value": "x64",
         "strategy": "external"
       },
+			"vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "hostOS": [ "Windows" ]
+        }
+      },
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",

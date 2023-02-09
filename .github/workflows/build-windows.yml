@@ -44,9 +44,6 @@ jobs:
         with:
           vcpkgGitCommitId: 1c48ec7f49d69bb753e6afefba51368e18263255
 
-      - name: Copying vcproj files
-        run: cp -v ${{ github.workspace }}/vcproj/Project/* ${{ github.workspace }}/build/${{ matrix.buildtype }}/
-
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
 
