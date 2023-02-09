@@ -3,7 +3,8 @@
   "version-string": "1.0.0",
   "dependencies": [
     "wxwidgets",
-		"boost",
+		"boost-system",
+		"boost-thread",
 		"libarchive",
 		"freeglut"
   ]
