@@ -9,6 +9,8 @@
 		"boost-variant",
 		"boost-thread",
 		"libarchive",
-		"freeglut"
+		"freeglut",
+		"opengl",
+		"zlib"
   ]
 }
