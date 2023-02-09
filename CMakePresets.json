@@ -16,17 +16,11 @@
           "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
           "type": "FILEPATH"
         },
-        "CMAKE_BUILD_TYPE": "Release",
-				"VCPKG_TARGET_TRIPLET": "x64-windows-static"
+        "CMAKE_BUILD_TYPE": "Release"
       },
       "architecture": {
         "value": "x64",
         "strategy": "external"
-      },
-			"vendor": {
-        "microsoft.com/VisualStudioSettings/CMake/1.0": {
-          "hostOS": [ "Windows" ]
-        }
       },
       "condition": {
         "type": "equals",

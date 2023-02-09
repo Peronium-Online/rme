@@ -5,6 +5,7 @@
     "wxwidgets",
 		"boost-asio",
 		"boost-system",
+		"boost-variant",
 		"boost-thread",
 		"libarchive",
 		"freeglut"
