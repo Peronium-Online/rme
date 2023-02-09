@@ -42,7 +42,6 @@ jobs:
       - name: Restore artifacts and install vcpkg
         uses: lukka/run-vcpkg@v10
         with:
-          runVcpkgInstall: true
           vcpkgGitCommitId: 1c48ec7f49d69bb753e6afefba51368e18263255
 
       - name: Get latest CMake
