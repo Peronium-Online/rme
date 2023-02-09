@@ -51,7 +51,7 @@ jobs:
         uses: lukka/run-cmake@v10
         with:
           configurePreset: ${{ matrix.buildtype }}
-          buildPreset: ${{ matrix.buildtype }}'
+          buildPreset: ${{ matrix.buildtype }}
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
