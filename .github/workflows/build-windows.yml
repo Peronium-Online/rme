@@ -44,6 +44,9 @@ jobs:
         with:
           vcpkgGitCommitId: 1c48ec7f49d69bb753e6afefba51368e18263255
 
+      - name: Copying vcproj files
+        run: cp -v ${{ github.workspace }}/vcproj/Project/* ${{ github.workspace }}/build/${{ matrix.buildtype }}/
+
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
 
@@ -58,12 +61,12 @@ jobs:
         with:
           name: rme-${{ matrix.buildtype }}-${{ github.sha }}
           path: |
-            ${{ github.workspace }}/build/rme.exe
+            ${{ github.workspace }}/build/${{ matrix.buildtype }}/rme.exe
 
       - name: Create and Upload Artifact (dlls)
         uses: actions/upload-artifact@main
         with:
           name: rme-${{ matrix.buildtype }}-${{ github.sha }}
           path: |
-            ${{ github.workspace }}/build/*.dll
+            ${{ github.workspace }}/build/${{ matrix.buildtype }}/*.dll
 
