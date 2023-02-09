@@ -4,6 +4,7 @@
   "dependencies": [
     "wxwidgets",
 		"boost-asio",
+		"boost-spirit",
 		"boost-system",
 		"boost-variant",
 		"boost-thread",
