@@ -52,7 +52,6 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}'
-          configurePresetAdditionalArgs: '--quiet'
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
