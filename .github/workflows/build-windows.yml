@@ -58,12 +58,12 @@ jobs:
         with:
           name: rme-${{ matrix.buildtype }}-${{ github.sha }}
           path: |
-            ${{ github.workspace }}/rme.exe
+            ${{ github.workspace }}/build/rme.exe
 
       - name: Create and Upload Artifact (dlls)
         uses: actions/upload-artifact@main
         with:
           name: rme-${{ matrix.buildtype }}-${{ github.sha }}
           path: |
-            ${{ github.workspace }}/*.dll
+            ${{ github.workspace }}/build/*.dll
 
