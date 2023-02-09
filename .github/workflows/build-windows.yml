@@ -40,18 +40,20 @@ jobs:
             ccache-${{ matrix.os }}
 
       - name: Restore artifacts and install vcpkg
-        uses: lukka/run-vcpkg@main
+        uses: lukka/run-vcpkg@v10
         with:
           vcpkgGitCommitId: 1c48ec7f49d69bb753e6afefba51368e18263255
 
       - name: Get latest CMake
-        uses: lukka/get-cmake@main
+        uses: lukka/get-cmake@latest
 
       - name: Run CMake
-        uses: lukka/run-cmake@main
+        uses: lukka/run-cmake@v10
         with:
           configurePreset: ${{ matrix.buildtype }}
-          buildPreset: ${{ matrix.buildtype }}
+          buildPreset: ${{ matrix.buildtype }}'
+          configurePresetAdditionalArgs:
+           - '--quiet'
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
