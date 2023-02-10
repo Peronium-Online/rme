@@ -16,9 +16,8 @@
           "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
           "type": "FILEPATH"
         },
-				"BUILD_STATIC_LIBRARY": "ON",
         "VCPKG_TARGET_TRIPLET": "x64-windows-static",
-        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+        "CMAKE_BUILD_TYPE": "RELEASE"
       },
       "architecture": {
         "value": "x64",
