@@ -4,11 +4,11 @@
   "dependencies": [
 	"libarchive",
     {"name": "wxwidgets", "host": true},
-	{"name": "boost-asio", "host": true},
-	{"name": "boost-spirit", "host": true},
-	{"name": "boost-system", "host": true},
-	{"name": "boost-variant", "host": true},
-	{"name": "boost-thread", "host": true},
+	"boost-asio",
+	"boost-spirit",
+	"boost-system",
+	"boost-variant",
+	"boost-thread",
 	{"name": "freeglut", "host": true},
 	{"name": "opengl", "host": true},
 	{"name": "zlib", "host": true}
