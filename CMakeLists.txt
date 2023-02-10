@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(rme)
+project(rme FILE ${CMAKE_CURRENT_LIST_DIR}/vcproj/Project/RME.vcxproj)
 
 if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE RelWithDebInfo)
