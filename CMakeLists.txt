@@ -1,15 +1,10 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(rme FILE ${CMAKE_CURRENT_LIST_DIR}/vcproj/Project/RME.vcxproj)
+project(rme)
 
 if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE RelWithDebInfo)
 endif()
-
-set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g -D__DEBUG__")
-set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
-set(CMAKE_CXX_FLAGS_RELEASE        "-O4 -DNDEBUG")
-set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
 
 # Set default compile flags for GCC
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
@@ -17,6 +12,11 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 	set(CMAKE_CXX_FLAGS "-Wall -Wextra  -Wno-unused-parameter -Wno-unused-variable -Wno-deprecated-declarations -Wno-overloaded-virtual -Wno-strict-aliasing -Wno-sign-compare -Wno-unused-function -Wunused-result")
 endif()
+
+set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g -D__DEBUG__")
+set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE        "-O4 -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
 
 find_package(OpenGL REQUIRED)
 
