@@ -16,8 +16,7 @@
           "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
           "type": "FILEPATH"
         },
-        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-				"CMAKE_CXX_COMPILER": "g++"
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       },
       "architecture": {
         "value": "x64",

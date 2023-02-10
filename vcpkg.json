@@ -3,14 +3,14 @@
   "version-string": "1.0.0",
   "dependencies": [
     "wxwidgets",
-		"boost-asio",
-		"boost-spirit",
-		"boost-system",
-		"boost-variant",
-		"boost-thread",
-		"libarchive",
-		"freeglut",
-		"opengl",
-		"zlib"
+	"boost-asio",
+	"boost-spirit",
+	"boost-system",
+	"boost-variant",
+	"boost-thread",
+	"libarchive",
+	"freeglut",
+	"opengl",
+	"zlib"
   ]
 }
