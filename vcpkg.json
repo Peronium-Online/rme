@@ -3,7 +3,7 @@
   "version-string": "1.0.0",
   "dependencies": [
 	"libarchive",
-    {"name": "wxwidgets", "host": true},
+    "wxwidgets",
 	"boost-asio",
 	"boost-spirit",
 	"boost-system",

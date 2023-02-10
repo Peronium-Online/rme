@@ -20,11 +20,6 @@ jobs:
       matrix:
         os: [windows-2022]
         buildtype: [windows-release]
-        include:
-          - os: windows-2022
-            triplet: x64-windows
-            packages: >
-              sccache
 
     steps:
       - name: Checkout repository
