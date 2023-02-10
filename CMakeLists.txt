@@ -13,7 +13,6 @@ endif()
 message("Detected Toolchain: ${CMAKE_TOOLCHAIN_FILE}")
 
 message("Detected compiler: ${CMAKE_CXX_COMPILER_ID}")
-# Set default compile flags for GCC
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	set(CMAKE_CXX_FLAGS "/MT /W1")
 	set(CMAKE_CXX_FLAGS_DEBUG "/Od /Zi /D__DEBUG__")

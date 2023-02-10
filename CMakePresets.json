@@ -17,7 +17,7 @@
           "type": "FILEPATH"
         },
         "VCPKG_TARGET_TRIPLET": "x64-windows-static",
-        "CMAKE_BUILD_TYPE": "RELEASE"
+        "CMAKE_BUILD_TYPE": "Release"
       },
       "architecture": {
         "value": "x64",
