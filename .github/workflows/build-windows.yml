@@ -52,6 +52,7 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
+          configurePresetAdditionalArgs: "['DCMAKE_BUILD_TYPE=release', 'DCMAKE_CXX_COMPILER=g++']"
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
