@@ -33,7 +33,7 @@ find_package(OpenGL REQUIRED)
 if(APPLE)
     set(CMAKE_PREFIX_PATH /usr/local/opt/libarchive)
 endif()
-find_package(LibArchive REQUIRED)
+find_package(LibArchive REQUIRED NO_MODULE)
 
 if(WIN32)
     set(Boost_THREADAPI win32)
