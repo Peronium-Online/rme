@@ -32,8 +32,11 @@ find_package(OpenGL REQUIRED)
 
 if(APPLE)
     set(CMAKE_PREFIX_PATH /usr/local/opt/libarchive)
+elseif(DEFINED ENV{VCPKG_ROOT})
+	message("vcpkg found, looking for packages at ENV{VCPKG_ROOT}/packages")
+	set(CMAKE_PREFIX_PATH ENV{VCPKG_ROOT}/packages)
 endif()
-find_package(LibArchive REQUIRED NO_MODULE)
+find_package(LibArchive REQUIRED)
 
 if(WIN32)
     set(Boost_THREADAPI win32)
