@@ -2,7 +2,7 @@
   "name": "rme",
   "version-string": "1.0.0",
   "dependencies": [
-    "wxwidgets",
+    "wxwidgets:x64-windows-static",
 	"boost-asio",
 	"boost-spirit",
 	"boost-system",
