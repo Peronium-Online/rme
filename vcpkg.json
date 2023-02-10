@@ -2,15 +2,15 @@
   "name": "rme",
   "version-string": "1.0.0",
   "dependencies": [
-    "wxwidgets:x64-windows-static",
-	"boost-asio",
-	"boost-spirit",
-	"boost-system",
-	"boost-variant",
-	"boost-thread",
-	"libarchive",
-	"freeglut",
-	"opengl",
-	"zlib"
+    {"name": "wxwidgets", "host": true},
+	{"name": "boost-asio", "host": true},
+	{"name": "boost-spirit", "host": true},
+	{"name": "boost-system", "host": true},
+	{"name": "boost-variant", "host": true},
+	{"name": "boost-thread", "host": true},
+	{"name": "libarchive", "host": true},
+	{"name": "freeglut", "host": true},
+	{"name": "opengl", "host": true},
+	{"name": "zlib", "host": true}
   ]
 }
