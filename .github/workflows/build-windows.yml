@@ -40,6 +40,9 @@ jobs:
           runVcpkgInstall: true
           vcpkgGitCommitId: 1c48ec7f49d69bb753e6afefba51368e18263255
 
+      - name: Run vcpkg integrate install
+        run: ${{env.VCPKG_INSTALLED_DIR}}/vcpkg integrate install
+
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
 
@@ -48,7 +51,7 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
-          buildPresetAdditionalArgs: "['--config Release','--target ./vcproj/Project/RME']"
+          buildPresetAdditionalArgs: "['--config Release']"
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
