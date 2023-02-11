@@ -45,7 +45,7 @@ jobs:
         run: ${{ env.VCPKG_ROOT }}/vcpkg integrate install
 
       - name: Checking vcpkg folder
-        run: ls ${{ github.workspace }}/build
+        run: where wx-config
 
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
