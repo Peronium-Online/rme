@@ -40,12 +40,6 @@ jobs:
           runVcpkgInstall: true
           vcpkgGitCommitId: 1c48ec7f49d69bb753e6afefba51368e18263255
 
-      - name: What is in the build folder
-        run: ls ${{ github.workspace }}/build/${{ matrix.buildtype }}/
-
-      - name: Copy .vcxproj
-        run: cp ${{ github.workspace }}/vcproj/Project/* ${{ github.workspace }}/build/${{ matrix.buildtype }}/
-
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
 
@@ -54,6 +48,7 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
+          buildPresetAdditionalArgs: "['--config Release','--target RME']"
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
