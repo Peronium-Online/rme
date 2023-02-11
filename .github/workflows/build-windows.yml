@@ -48,7 +48,7 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
-          buildPresetAdditionalArgs: "['--config Release','--target  ${{ github.workspace }}/vcproj/Project/RME.vcxproj']"
+          buildPresetAdditionalArgs: "['--config Release','--target  ${{ github.workspace }}/vcproj/Project/RME']"
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
