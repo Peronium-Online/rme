@@ -11,6 +11,7 @@ on:
 env:
   CMAKE_BUILD_PARALLEL_LEVEL: 2
   MAKEFLAGS: '-j 2'
+  VCPKG_DEFAULT_TRIPLET: x64-windows-static
 
 jobs:
   job:
@@ -41,7 +42,7 @@ jobs:
           vcpkgGitCommitId: 1c48ec7f49d69bb753e6afefba51368e18263255
 
       - name: Run vcpkg integrate install
-        run: ${{env.VCPKG_INSTALLED_DIR}}/vcpkg integrate install
+        run: ${{ env.VCPKG_ROOT }}/vcpkg integrate install
 
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
