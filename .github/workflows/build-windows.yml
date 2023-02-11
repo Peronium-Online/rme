@@ -45,7 +45,7 @@ jobs:
         run: ${{ env.VCPKG_ROOT }}/vcpkg integrate install
 
       - name: Checking vcpkg folder
-        run: ls ${{ env.VCPKG_ROOT }}/packages
+        run: ls ${{ env.VCPKG_ROOT }}/packages/detect_compiler_x64-windows
 
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
@@ -55,7 +55,7 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
-          configurePresetAdditionalArgs: "['-D wxWidgets_CONFIG_EXECUTABLE:FILEPATH=${{ env.VCPKG_ROOT }}/packages/wxwidgets_${{ env.VCPKG_DEFAULT_TRIPLET }}/wx-config']"
+          configurePresetAdditionalArgs: "['-D wxWidgets_CONFIG_EXECUTABLE:FILEPATH=${{ env.VCPKG_ROOT }}/packages/detect_compiler_x64-windows/wxwidgets/wx-config']"
           buildPresetAdditionalArgs: "['--config Release']"
 
       - name: Create and Upload Artifact (exe)
