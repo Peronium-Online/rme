@@ -40,7 +40,7 @@ endif()
 find_package(Boost 1.34.0 COMPONENTS thread system REQUIRED)
 
 message("wxWidgets things: Use file -> ${wxWidgets_USE_FILE} | Libs -> ${wxWidgets_LIBRARIES}")
-find_package(wxWidgets COMPONENTS html aui gl adv core net base REQUIRED)
+find_package(wxWidgets REQUIRED COMPONENTS gl core base html aui adv net )
 
 find_package(GLUT REQUIRED)
 find_package(ZLIB REQUIRED)
