@@ -48,9 +48,6 @@ find_package(ZLIB REQUIRED)
 include(${wxWidgets_USE_FILE})
 include(${CMAKE_CURRENT_LIST_DIR}/source/CMakeLists.txt)
 
-message(".h files: ${rme_H}")
-message(".cpp files: ${rme_SRC}")
-
 if (MSVC)
 	add_executable(rme ${rme_H} ${rme_SRC} ${CMAKE_CURRENT_LIST_DIR}/vcproj/Project/RME.rc)
 else()
@@ -59,6 +56,9 @@ endif()
 
 set_target_properties(rme PROPERTIES CXX_STANDARD 17)
 set_target_properties(rme PROPERTIES CXX_STANDARD_REQUIRED ON)
+
+message(${Boost_INCLUDE_DIRS} ${LibArchive_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLUT_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIR})
+message(${wxWidgets_LIBRARIES} ${Boost_LIBRARIES} ${LibArchive_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${ZLIB_LIBRARIES})
 
 include_directories(${Boost_INCLUDE_DIRS} ${LibArchive_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLUT_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIR})
 target_link_libraries(rme ${wxWidgets_LIBRARIES} ${Boost_LIBRARIES} ${LibArchive_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${ZLIB_LIBRARIES})
