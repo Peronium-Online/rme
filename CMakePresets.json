@@ -17,7 +17,8 @@
           "type": "FILEPATH"
         },
         "VCPKG_TARGET_TRIPLET": "x64-windows",
-        "CMAKE_BUILD_TYPE": "Release"
+        "CMAKE_BUILD_TYPE": "Release",
+				"wxWidgets_LIBRARIES": "D:/a/rme/rme/build/windows-release/vcpkg_installed/x64-windows/lib/"
       },
       "architecture": {
         "value": "x64",
