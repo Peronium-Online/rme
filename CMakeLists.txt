@@ -47,7 +47,11 @@ find_package(ZLIB REQUIRED)
 
 include(${wxWidgets_USE_FILE})
 include(source/CMakeLists.txt)
-add_executable(rme ${rme_H} ${rme_SRC})
+if (MSVC)
+	add_executable(rme ${rme_H} ${rme_SRC} ../rme_icon.ico)
+else()
+	add_executable(rme ${rme_H} ${rme_SRC})
+endif()
 
 set_target_properties(rme PROPERTIES CXX_STANDARD 17)
 set_target_properties(rme PROPERTIES CXX_STANDARD_REQUIRED ON)
