@@ -46,7 +46,11 @@ find_package(GLUT REQUIRED)
 find_package(ZLIB REQUIRED)
 
 include(${wxWidgets_USE_FILE})
-include(source/CMakeLists.txt)
+include(${CMAKE_CURRENT_LIST_DIR}/source/CMakeLists.txt)
+
+message(".h files: ${rme_H}")
+message(".cpp files: ${rme_SRC}")
+
 if (MSVC)
 	add_executable(rme ${rme_H} ${rme_SRC} ${CMAKE_CURRENT_LIST_DIR}/vcproj/Project/RME.rc)
 else()
