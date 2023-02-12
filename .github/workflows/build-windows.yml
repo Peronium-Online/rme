@@ -45,7 +45,7 @@ jobs:
         run: ${{ env.VCPKG_ROOT }}/vcpkg integrate install
 
       - name: Checking vcpkg folder
-        run: ls .
+        run: ls ./vcpkg
 
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
@@ -55,7 +55,7 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
-          buildPresetAdditionalArgs: "['--config Release','-DwxWidgets_LIBRARIES=${{ github.workspace }}/build/${{ matrix.buildtype }}/vcpkg_installed/{{ env.VCPKG_DEFAULT_TRIPLET }}/lib/']"
+          buildPresetAdditionalArgs: "['--config Release','-DwxWidgets_LIBRARIES=${{ github.workspace }}/build/${{ matrix.buildtype }}/vcpkg_installed/{{ env.VCPKG_DEFAULT_TRIPLET }}/lib/','-DwxWidgets_USE_FILE=${{ env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake")']"
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
