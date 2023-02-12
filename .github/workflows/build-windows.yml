@@ -55,7 +55,7 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
-          buildPresetAdditionalArgs: "['--config Release','-DwxWidgets_ROOT_DIR= ${{ github.workspace }}/build/${{ matrix.buildtype }}/vcpkg_installed/x64-windows/lib']"
+          buildPresetAdditionalArgs: "['--config Release']"
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
