@@ -15,6 +15,7 @@ message("Detected Toolchain: ${CMAKE_TOOLCHAIN_FILE}")
 message("Detected compiler: ${CMAKE_CXX_COMPILER_ID}")
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	set(CMAKE_CXX_FLAGS "/EHsc /O2 /Ob2 /Oi /Ot /Os /DNDEBUG /D__RELEASE__ /DWXUSINGDLL /DWXMSVC_VERSION_AUTO /D_CRT_SECURE_NO_WARNINGS /MD /Gy /W3 /Zi /MP /GS- /Zm114")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /LIBPATH:comctl32.lib /LIBPATH:WS2_32.lib /DEBUG /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /OPT:REF /OPT:ICF")
 	# set(CMAKE_CXX_FLAGS_DEBUG "/Od /Zi /D__DEBUG__")
 	# set(CMAKE_CXX_FLAGS_MINSIZEREL "/O1 /DNDEBUG")
 	# set(CMAKE_CXX_FLAGS_RELEASE "/O2 /DNDEBUG")
@@ -39,7 +40,6 @@ if(WIN32)
 endif()
 find_package(Boost 1.34.0 COMPONENTS thread system REQUIRED)
 
-message("wxWidgets things: Use file -> ${wxWidgets_USE_FILE} | Libs -> ${wxWidgets_LIBRARIES}")
 find_package(wxWidgets REQUIRED COMPONENTS gl core base html aui adv net )
 
 find_package(GLUT REQUIRED)
@@ -56,9 +56,6 @@ endif()
 
 set_target_properties(rme PROPERTIES CXX_STANDARD 17)
 set_target_properties(rme PROPERTIES CXX_STANDARD_REQUIRED ON)
-
-message(${Boost_INCLUDE_DIRS} ${LibArchive_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLUT_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIR})
-message(${wxWidgets_LIBRARIES} ${Boost_LIBRARIES} ${LibArchive_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${ZLIB_LIBRARIES})
 
 include_directories(${Boost_INCLUDE_DIRS} ${LibArchive_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${GLUT_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIR})
 target_link_libraries(rme ${wxWidgets_LIBRARIES} ${Boost_LIBRARIES} ${LibArchive_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${ZLIB_LIBRARIES})
