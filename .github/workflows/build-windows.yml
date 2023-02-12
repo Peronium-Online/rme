@@ -45,7 +45,10 @@ jobs:
         run: ${{ env.VCPKG_ROOT }}/vcpkg integrate install
 
       - name: Checking vcpkg folder
-        run: ls ./vcpkg
+        run: ls ./vcpkg/packages
+
+      - name: Checking vcpkg root
+        run: ls ${{ env.VCPKG_ROOT }}/scripts/buildsystems/
 
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
@@ -55,6 +58,7 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
+          configurePresetAdditionalArgs: "['-DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=${{ env.VCPKG_ROOT }}/packages/wxwidgets']"
           buildPresetAdditionalArgs: "['--config Release']"
 
       - name: Create and Upload Artifact (exe)
