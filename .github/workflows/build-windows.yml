@@ -44,9 +44,6 @@ jobs:
       - name: Run vcpkg integrate install
         run: ${{ env.VCPKG_ROOT }}/vcpkg integrate install
 
-      - name: Checking vcpkg ports
-        run: ls ${{ env.VCPKG_ROOT }}/ports/wxwidgets
-
       - name: Get latest CMake
         uses: lukka/get-cmake@latest
 
@@ -55,20 +52,22 @@ jobs:
         with:
           configurePreset: ${{ matrix.buildtype }}
           buildPreset: ${{ matrix.buildtype }}
-          # configurePresetAdditionalArgs: "['-DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=${{ env.VCPKG_ROOT }}/packages/detect_compiler_x64-windows/wxwidgets']"
           buildPresetAdditionalArgs: "['--config Release']"
+
+      - name: Checking builded files
+        run: ls ${{ github.workspace }}/build/${{ matrix.buildtype }}/Release/
 
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
         with:
           name: rme-${{ matrix.buildtype }}-${{ github.sha }}
           path: |
-            ${{ github.workspace }}/build/${{ matrix.buildtype }}/rme.exe
+            ${{ github.workspace }}/build/${{ matrix.buildtype }}/Release/rme.exe
 
       - name: Create and Upload Artifact (dlls)
         uses: actions/upload-artifact@main
         with:
           name: rme-${{ matrix.buildtype }}-${{ github.sha }}
           path: |
-            ${{ github.workspace }}/build/${{ matrix.buildtype }}/*.dll
+            ${{ github.workspace }}/build/${{ matrix.buildtype }}/Release/*.dll
 
