@@ -54,9 +54,6 @@ jobs:
           buildPreset: ${{ matrix.buildtype }}
           buildPresetAdditionalArgs: "['--config Release']"
 
-      - name: Checking builded files
-        run: ls ${{ github.workspace }}/build/${{ matrix.buildtype }}/Release/
-
       - name: Create and Upload Artifact (exe)
         uses: actions/upload-artifact@main
         with:

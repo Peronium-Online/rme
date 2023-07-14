@@ -861,4 +861,43 @@
 		</wall>
 	</brush>
 
+
+	<brush name="Yalahar wall" type="wall" server_lookid="9370">
+		<wall type="horizontal">
+			<item id="9373" chance="300"/>
+			<item id="9370" chance="200"/>
+			<door id="9523" type="normal" open="true"/>
+			<door id="9523" type="normal" open="true"/>
+			<door id="9523" type="locked" open="false"/>
+			<door id="9523" type="locked" open="true"/>
+			<door id="9523" type="quest" open="false"/>
+			<door id="9523" type="quest" open="true"/>
+			<door id="9523" type="magic" open="false"/>
+			<door id="9523" type="magic" open="true"/>
+			<door id="9382" type="hatch_window" open="false"/>
+			<door id="9383" type="hatch_window" open="true"/>
+			<door id="9383" type="window"/>
+		</wall>
+		<wall type="vertical">
+			<item id="9377" chance="300"/>
+			<item id="9371" chance="200"/>
+			<door id="9527" type="normal" open="false"/>
+			<door id="9527" type="normal" open="true"/>
+			<door id="9527" type="locked" open="false"/>
+			<door id="9527" type="locked" open="true"/>
+			<door id="9527" type="quest" open="false"/>
+			<door id="9527" type="quest" open="true"/>
+			<door id="9527" type="magic" open="false"/>
+			<door id="9527" type="magic" open="true"/>
+			<door id="9385" type="hatch_window" open="false"/>
+			<door id="9386" type="hatch_window" open="true"/>
+			<door id="9386" type="window"/>
+		</wall>
+		<wall type="corner">
+			<item id="9376" chance="1000"/>
+		</wall>
+		<wall type="pole">
+			<item id="9372" chance="1000"/>
+		</wall>
+	</brush>
 </materials>

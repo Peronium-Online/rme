@@ -28,6 +28,7 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 	set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
 endif()
 
+cmake_policy(SET CMP0072 NEW)
 find_package(OpenGL REQUIRED)
 
 if(APPLE)

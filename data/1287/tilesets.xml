@@ -458,7 +458,18 @@
 			<brush name="dark fence"/>
 			<brush name="steel bars"/>
 			<brush name="steel rebar"/>
+
+			<brush name="Yalahar wall"/>
+			<brush name="bridge"/>
 		</terrain>
+	</tileset>
+
+	<tileset name="Bridges">
+		<raw>
+			<item fromid="3756" toid="3791"/>
+			<item fromid="11868" toid="11907"/>
+			<item fromid="11864" toid="11867"/>
+		</raw>
 	</tileset>
 
 	<tileset name="Roofs">
